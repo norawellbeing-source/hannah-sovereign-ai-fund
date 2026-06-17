@@ -1,9 +1,9 @@
 :root {
-  --bg: #0B0F1A;
-  --text: #F5F6F7;
-  --muted: #8A93A6;
-  --accent: #3B82F6;
-  --hairline: rgba(245, 246, 247, 0.12);
+  --bg: #0D1B1B;
+  --text: #F2EEE3;
+  --muted: #9CA6A2;
+  --accent: #3FA796;
+  --hairline: rgba(242, 238, 227, 0.12);
   --display-font: 'Space Grotesk', 'Inter', sans-serif;
   --body-font: 'Inter', sans-serif;
 }
@@ -31,7 +31,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(11, 15, 26, 0.85);
+  background: rgba(13, 27, 27, 0.85);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--hairline);
 }
@@ -200,6 +200,12 @@ body {
   padding: 20px 24px;
 }
 
+.quote-context {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
 .quote-text {
   font-style: italic;
   font-size: 1.05rem;
@@ -245,6 +251,76 @@ body {
 .quote-block-attribution {
   font-size: 0.95rem;
   color: var(--muted);
+}
+
+/* FAQ accordion */
+.faq {
+  padding: 100px 0;
+}
+
+.accordion {
+  border-top: 1px solid var(--hairline);
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.accordion-trigger {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 0;
+  font-family: var(--body-font);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: left;
+  transition: color 0.2s ease;
+}
+
+.accordion-trigger:hover {
+  color: var(--accent);
+}
+
+.accordion-item.is-open .accordion-trigger {
+  color: var(--accent);
+}
+
+.accordion-icon {
+  flex-shrink: 0;
+  font-family: var(--display-font);
+  font-size: 1.3rem;
+  color: var(--accent);
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.is-open .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.accordion-item.is-open .accordion-panel {
+  grid-template-rows: 1fr;
+}
+
+.accordion-panel > .accordion-answer {
+  min-height: 0;
+  overflow: hidden;
+  color: var(--muted);
+  max-width: 720px;
+  padding-bottom: 28px;
 }
 
 /* Footer */
